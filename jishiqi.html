@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>定时器</title>
+    <script type="text/javascript">
+        var attime;
+
+        function clock(){
+            var time=new Date();
+            attime=time.getHours()+":"+time.getMinutes()+":"+time.getSeconds() ;
+            document.getElementById("clock").value = attime;
+        }
+
+        function stop() {
+            clearInterval(setId);   //取消计时
+        }
+
+        function delay() {
+            setTimeout("alert('Hello')",2000); //延迟2s后弹出hello
+        }
+        var setId=setInterval(clock,100)    //开始计时
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="clock" size="50"  />
+    <input type="button" value="stop"  onclick="stop()"/>
+    <input type="button" value="Show after two sec" onclick="delay()">
+</form>
+</body>
+</html>

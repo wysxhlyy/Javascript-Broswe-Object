@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史记录</title>
+    <script>
+        function goPage() {
+            var gotUrl;
+            document.getElementById("url").value=window.history.length;
+            window.history.go(-1);                  //-1就是上一页，1就是下一页，-2就是上两页，以此类推
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="back" onclick="window.history.back()">
+    <input type="button" value="forward" onclick="window.history.forward()">
+    <input type="text" id="url">
+    <input type="button" value="go" onclick="goPage()">
+
+
+
+</body>
+</html>
